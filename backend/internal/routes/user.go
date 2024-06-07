@@ -71,3 +71,70 @@ func Signin(client *mongo.Client) http.HandlerFunc {
 
 	}
 }
+
+func Signup(client *mongo.Client) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		var req SignUpRequest
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+
+		if req.Email == "" {
+			http.Error(w, "Email is required", http.StatusBadRequest)
+			return
+		} else if req.Password == "" {
+			http.Error(w, "Password is required", http.StatusBadRequest)
+			return
+		} else if req.Username == "" {
+			http.Error(w, "Username is required", http.StatusBadRequest)
+			return
+		}
+
+		// Add connection names to the dotenv
+		collection := client.Database("goBackend").Collection("users")
+		var checkUser models.User
+
+		//Check if the email or username are already used
+		err := collection.FindOne(context.TODO(), bson.M{"email": req.Email}).Decode(&checkUser)
+		if err == nil {
+			http.Error(w, "Email is already used", http.StatusBadRequest)
+			return
+		} else if err != mongo.ErrNoDocuments {
+			log.Println("Error checking for existing user:", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+		err = collection.FindOne(context.TODO(), bson.M{"username": req.Username}).Decode(&checkUser)
+		if err == nil {
+			http.Error(w, "Username is already used", http.StatusBadRequest)
+			return
+		} else if err != mongo.ErrNoDocuments {
+			log.Println("Error checking for existing user:", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+
+		hashedPassword, err := services.HashPassword(req.Password)
+		if err != nil {
+			log.Println("Error hashing the password:", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+
+		user := &models.User{
+			Email:    req.Email,
+			Password: hashedPassword,
+			Username: req.Username,
+		}
+
+		if err := services.AddUser(client, user); err != nil {
+			log.Println("Error creating user:", err)
+			http.Error(w, "Internal server error", http.StatusInternalServerError)
+			return
+		}
+
+		w.WriteHeader(http.StatusCreated)
+		json.NewEncoder(w).Encode(map[string]string{"message": "User created successfully"})
+	}
+}
