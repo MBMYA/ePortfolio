@@ -1,10 +1,6 @@
 package services
 
 import (
-	"backend/internal/models"
-	"context"
-
-	"go.mongodb.org/mongo-driver/mongo"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -18,10 +14,4 @@ func HashPassword(password string) (string, error) {
 func CheckHash(password string, hashedPassword string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(hashedPassword), []byte(password))
 	return err == nil
-}
-
-func AddUser(client *mongo.Client, user *models.User) error {
-	collection := client.Database("goBackend").Collection("users")
-	_, err := collection.InsertOne(context.Background(), user)
-	return err
 }

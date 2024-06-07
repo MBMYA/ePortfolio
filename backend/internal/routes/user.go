@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"backend/internal/database"
 	"backend/internal/models"
 	"backend/internal/services"
 	"context"
@@ -128,7 +129,7 @@ func Signup(client *mongo.Client) http.HandlerFunc {
 			Username: req.Username,
 		}
 
-		if err := services.AddUser(client, user); err != nil {
+		if err := database.AddUser(client, user); err != nil {
 			log.Println("Error creating user:", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
 			return
