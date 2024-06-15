@@ -1,12 +1,12 @@
-import jwt_decode from 'jwt-decode';
-import api from 'constants/api_links.js';
+import {jwtDecode} from 'jwt-decode';
+import api from '../constants/api_links.js';
 
 // signin http request
 export async function signin(credentials) {
-    return fetch(api + '/Signin', {
-        method : 'GET',
+    return fetch('http://localhost:8080/Signin', {
+        method : 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'text/plain'
         },
         body: JSON.stringify(credentials)
     }).then(function(ress){
@@ -64,7 +64,7 @@ export function getToken() {
 
 // check if the token given is valid or expired
 function checkTokenValidity(token) {
-    var decodedToken = jwt_decode(token, {complete: true});
+    var decodedToken = jwtDecode(token, {complete: true});
     var timeNow = new Date();
     if (decodedToken.exp * 1000 < timeNow.getTime())
         return false; // Invalid token
