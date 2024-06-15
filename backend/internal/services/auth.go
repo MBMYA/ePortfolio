@@ -1,6 +1,7 @@
 package services
 
 import (
+	"backend/internal/models"
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -10,14 +11,16 @@ import (
 var jwtKey = []byte("my_secret_key")
 
 type Claims struct {
-	Email string `json:"email"`
+	Email    string `json:"email"`
+	Username string `json:"username"`
 	jwt.StandardClaims
 }
 
-func GenerateJWT(email string) (string, error) {
+func GenerateJWT(user models.User) (string, error) {
 	expirationTime := time.Now().Add(24 * time.Hour)
 	claim := &Claims{
-		Email: email,
+		Email:    user.Email,
+		Username: user.Username,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expirationTime.Unix(),
 		},

@@ -54,7 +54,7 @@ func Signin(client *mongo.Client) http.HandlerFunc {
 			return
 		}
 
-		token, err := services.GenerateJWT(user.Email)
+		token, err := services.GenerateJWT(user)
 		if err != nil {
 			log.Println("Error generating token: ", err)
 			http.Error(w, "Internal server error", http.StatusInternalServerError)
