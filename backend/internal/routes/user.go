@@ -68,6 +68,8 @@ func Signin(client *mongo.Client) http.HandlerFunc {
 		})
 
 		w.WriteHeader(http.StatusOK)
+		// w.Header().Set("Access-Control-Allow-Origin", "*")
+		// w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
 		json.NewEncoder(w).Encode(map[string]string{"message": "Signed in successfully"})
 
 	}

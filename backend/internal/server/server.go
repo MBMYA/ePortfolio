@@ -11,6 +11,6 @@ import (
 func ServerRouting(cfg *config.Config, client *mongo.Client) *http.ServeMux {
 	mux := http.NewServeMux()
 	mux.HandleFunc("POST /Signup", routes.Signup(client))
-	mux.HandleFunc("GET /Signin", routes.Signin(client))
+	mux.HandleFunc("POST /Signin", routes.Signin(client))
 	return mux
 }
