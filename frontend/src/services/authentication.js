@@ -1,5 +1,6 @@
 import {jwtDecode} from 'jwt-decode';
 import api from '../constants/api_links.js';
+import Cookies from 'js-cookie';
 
 // signin http request
 export async function signin(credentials) {
@@ -10,7 +11,7 @@ export async function signin(credentials) {
         },
         body: JSON.stringify(credentials)
     }).then(function(ress){
-        return(ress.json())
+        return(Cookies.get('token'))
     }).catch(function(ress){
         console.log("error", ress);
         return "Server is unreachable";
@@ -36,10 +37,10 @@ export async function signup(credentials) {
 // save given token on the local storage
 export function saveToken(token){
     try {
-        localStorage.setItem('accessToken', token.accessToken);
-        localStorage.setItem('userID', token.id);
-        localStorage.setItem('username', token.username);
-        localStorage.setItem('email', token.email);
+        const decodedToken = jwtDecode(token, {complete: true});
+        localStorage.setItem('accessToken', token);
+        localStorage.setItem('username', decodedToken.username);
+        localStorage.setItem('email', decodedToken.email);
     } catch (err) {
         return false;
     }
