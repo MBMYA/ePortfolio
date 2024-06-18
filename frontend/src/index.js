@@ -1,19 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { createBrowserHistory } from "history";
 import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
 import { getToken, logout } from './services/authentication.js';
+import App from "./App.js"
 
-import Signin from "./views/Signin.js";
+import Login from "./views/Login.js";
+import Profile from "./views/Profile.js"
 // import Signup from "views/Signup.js";
 const history = createBrowserHistory();
 
 const PrivateRoute = ({component: Component, ...rest}) => {
   return (
-    <Route {...rest} render={props => (
-      getToken()? 
-        <Component {...props} /> : <Navigate to= "/Signin" />
-    )} />
+    getToken()? 
+    <Component /> : <Navigate to= "/" />
   );
 };
 
@@ -28,7 +28,7 @@ const LogoutRoute = ({component: Component, ...rest}) => {
   return (
     <Route {...rest} render={props => (
       logout()? 
-      <Navigate to= "/Signin" /> : <Component {...props} />
+      <Navigate to= "/" /> : <Component {...props} />
     )} />
   );
 };
@@ -38,7 +38,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <Router history={history}>
       <Routes>
-          <Route restricted={true} element={<PublicRoute component={Signin}/>} path="/signin" />
+          <Route restricted={true} element={<PublicRoute component={Login}/>} path="/" />
+          <Route element={<PrivateRoute component={Profile}/>} path="/profile/:id" />
           {/* <PublicRoute restricted={true} component={Signup} path="/signup" /> */}
           {/* <LogoutRoute component={Signin} path="/logout" /> */}
           {/* <PrivateRoute component={AdminLayout} path="/dashboard" /> */}
