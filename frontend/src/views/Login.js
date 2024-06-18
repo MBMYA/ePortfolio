@@ -17,7 +17,6 @@ import "../assets/css/login.css";
 import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 import { signin, saveToken, signup } from '../services/authentication.js';
 import { withRouter } from "../services/with-router.js";
-import RedirectHome from "../components/LoginButton.jsx";
 
 
 function Login(props) {

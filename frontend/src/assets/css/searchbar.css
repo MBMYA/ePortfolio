@@ -20,7 +20,7 @@
  position: absolute;
  height: 100%;
  width: 100%;
- border-radius: 25px;
+ border-radius: 5px;
  background: #fff;
  outline: none;
  border: none;
@@ -39,13 +39,13 @@
   line-height: 30px;
   color: #6e6e6e;
   font-size: 20px;
-  border-radius: 25px;
+  border-radius: 5px;
 }
 #check:checked ~ .search-box .icon{
   background: #6e6e6e;
   color: #FFF;
   width: 60px;
-  border-radius: 0 25px 25px 0;
+  border-radius: 0 5px 5px 0;
 }
 #check{
   display: none;
