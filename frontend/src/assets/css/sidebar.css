@@ -1,0 +1,18 @@
+.sidebar {
+    background: #ffffff;
+}
+
+.menuElement {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #165a72;
+}
+
+h1 {
+    margin: 50px auto;
+    font-size: 40px;
+}
+
+h2 {
+    color: #165a72;
+}
