@@ -19,7 +19,7 @@ import { withRouter } from "../services/with-router.js";
 
 function Profile(props) {
     return (
-            <div style={{ display: "flex", flexDirection: "row", height: "100vh", width: "100vw"}}>
+            <div style={{ display: "flex", flexDirection: "row", height: "100vh", width: "100vw", backgroundColor: "#dbdbdb"}}>
                 <div className="side-bar">
                     <Side_bar />
                 </div>

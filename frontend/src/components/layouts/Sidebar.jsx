@@ -23,10 +23,10 @@ const Side_bar = (props) => {
 
     return (
       <div style={{ display: "flex", height: "100vh" }}>
-        <Sidebar collapsed={collapsed} className="sidebar">
+        <Sidebar collapsed={collapsed} className="app">
           <Menu className="sidebar">
-            <MenuItem icon={<MenuRoundedIcon onClick={collapseBar}/>} className="menuElement">
-              <h2>ePortfolio</h2>
+            <MenuItem onClick={collapseBar} icon={<MenuRoundedIcon />} className="menuElement">
+              <h2 onClick={navigateClick}>ePortfolio</h2>
             </MenuItem>
             <MenuItem onClick={navigateClick} icon={<HomeIcon />} className="menuElement"> Home </MenuItem>
             <SubMenu icon={<AccountBoxIcon />} label="Profile" className="menuElement">

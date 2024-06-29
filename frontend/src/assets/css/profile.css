@@ -10,11 +10,12 @@
     height: 6vh;
     top: 0%;
     left: 0%;
-    background-color: #24252A;
-    padding: 1.5vh 90px;
+    background-color: #dbdbdb;
+    padding: 5vh 60px;
     align-items: center;
     display: flex;
     justify-content: space-between;
+    border: 0px;
 }
 
 .side-bar {
@@ -23,6 +24,7 @@
     height: 100vh;
     background-color: #ffffff;
     display: flex;
+    border: 0px;
   }
 
 .nav-link {
@@ -45,12 +47,13 @@
 }
 
 .nav_links li a:hover{
-    color: #0088a9;
+    color: #005f77;
+    font-weight: bold;
 }
 
 a button {
     padding: 9px 25px;
-    width: 150px;
+    width: 9vw;
     background-color: rgba(0, 136, 169, 1);
     border: none;
     border-radius: 50px;
@@ -58,27 +61,27 @@ a button {
     transition: all 0.3s ease 0s;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 20px;
     color: #edf0f1;
     text-decoration: none;
   }
 
 a button:hover {
-    background-color: rgba(0, 136, 169, 0.8);
+    background-color: rgba(0, 136, 169, 0.616);
 }
 
 li, a {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 16px;
-    color: #edf0f1;
+    font-size: 20px;
+    color: #080808;
     text-decoration: none;
 }
 
 button{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 18px;
     color: #edf0f1;
     text-decoration: none;
 }

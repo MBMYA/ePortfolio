@@ -1,5 +1,13 @@
+.app {
+    background: #8ac6d8;
+    border: 0px;
+
+}
+
 .sidebar {
-    background: #ffffff;
+    background: transparent;
+    /* height: 100vh;
+    overflow: hidden; */
 }
 
 .menuElement {
