@@ -4,12 +4,12 @@ import "../../assets/css/searchbar.css";
 
 function Searchbar() {
     return (
-        <div class="box">
+        <div className="box">
     <input type="checkbox" id="check"/>
-    <div class="search-box">
+    <div className="search-box">
       <input type="text" placeholder="Type here..."/>
-      <label for="check" class="icon">
-        <i class="fas fa-search"></i>
+      <label htmlFor="check" className="icon">
+        <i className="fas fa-search"></i>
       </label>
     </div>
   </div>

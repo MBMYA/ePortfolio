@@ -19,25 +19,30 @@ import { withRouter } from "../services/with-router.js";
 
 function Profile(props) {
     return (
-        <>
-            <div className="top-bar">
-                <nav-bar>
-                    <ul class="nav_links">
-                        <li><a href="#">Main Page</a></li>
-                        <li><a href="#">Description</a></li>
-                        <li><a href="#">Manual</a></li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
-                </nav-bar>
-                <div className="searchBar">
-                    <Searchbar />
+            <div style={{ display: "flex", flexDirection: "row", height: "100vh", width: "100vw"}}>
+                <div className="side-bar">
+                    <Side_bar />
                 </div>
-                <a class="cta"><button>Sign Out</button></a>
+                <div style={{ display: "flex", flexDirection: "column", height: "100vh", flex: "1"}}>
+                    <div className="top-bar">
+                        <nav-bar className="nav-link">
+                            <ul className="nav_links">
+                                <li><a href="#">Main Page</a></li>
+                                <li><a href="#">Description</a></li>
+                                <li><a href="#">Manual</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul>
+                        </nav-bar>
+                        <div className="searchBar">
+                            <Searchbar />
+                        </div>
+                        <a className="cta"><button>Sign Out</button></a>
+                    </div>
+                    <div>
+                        <h1>Test</h1>
+                    </div>
+                </div>
             </div>
-            <div className="side-bar">
-                <Side_bar />
-            </div>
-        </>
     );
 }
 

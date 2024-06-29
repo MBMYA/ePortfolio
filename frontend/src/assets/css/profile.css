@@ -1,21 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 
+
+
 .top-bar {
     font-family: Arial, sans-serif;
-    position: absolute;
-    width: 100vw;
+    position: relative;
+    width: auto;
+    height: 6vh;
     top: 0%;
     left: 0%;
     background-color: #24252A;
-    padding: 10px 90px;
+    padding: 1.5vh 90px;
     align-items: center;
     display: flex;
     justify-content: space-between;
 }
 
+.side-bar {
+    font-family: Arial, sans-serif;
+    position: relative;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+  }
+
+.nav-link {
+    display: flex;
+    flex: 1;
+}
+
 .nav_links{
     list-style: none;
+    display: flex;
 }
 
 .nav_links li{
@@ -70,14 +87,4 @@ button{
     width: 300px;
     /* padding: 9px 25px; */
     height: 30px;
-}
-
-
-.side-bar {
-  font-family: Arial, sans-serif;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  background-color: #ffffff;
-  display: flex;
 }

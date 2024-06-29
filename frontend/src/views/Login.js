@@ -28,28 +28,6 @@ function Login(props) {
     const [errorMessage, setErrorMessage] = useState("");
 
     let navigate = useNavigate();
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         email: "",
-    //         password: "",
-    //         username: "",
-    //         hidden: true,
-    //         showErrorMessage: false,
-    //         errorMessage: ""
-    //     };
-    //     this.handleEmailChange = this.handleEmailChange.bind(this);
-    //     this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    //     this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    //     this.toggleShow = this.toggleShow.bind(this);
-    // }
-
-    // componentDidUpdate(e) {
-    //     if (this.props.password) {
-    //         this.setState({ password: this.props.password});
-    //     }
-    // }
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
@@ -67,9 +45,6 @@ function Login(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const email = this.state.email;
-        // const password = this.state.password;
-        // const username = this.state.username;
         if(e.currentTarget.id == "form-signin") {
             const token = await signin({
                 email,
@@ -172,83 +147,6 @@ function Login(props) {
                         </div>
                     </div>
                 </div>
-
-
-
-
-                {/* <div className="pt-5">
-                <div class="center">
-                    <div className="sign-in-card">
-                        <Card className="card-user" style={{ backgroundColor: "transparent" }}>
-                        <CardHeader>
-                        </CardHeader>
-                        <CardBody>
-                            <Form onSubmit={this.handleSubmit}>
-                            <h5 className="title">Sign in</h5>
-                            <Row>
-                                <Col md="6">
-                                <FormGroup>
-                                    <label>E-mail</label>
-                                    <Input
-                                    value={this.state.email}
-                                    onChange={this.handleEmailChange}
-                                    placeholder="E-mail"
-                                    type="text"
-                                    />
-                                </FormGroup>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col md="7">
-                                <FormGroup>
-                                    <label>Password</label>
-                                    <Row>
-                                    <Col md="10">
-                                        <Input
-                                        value={this.state.password}
-                                        onChange={this.handlePasswordChange}
-                                        placeholder="password"
-                                        type={this.state.hidden ? 'password' : 'text'}
-                                        /></Col>
-                                    <Col md="1">
-                                        <Button
-                                        className="password-btn"
-                                        onClick={this.toggleShow}
-                                        >
-                                        <i className={this.state.hidden ? 'far fa-eye fa-lg' : 'far fa-eye-slash fa-lg'}></i>
-                                        </Button>
-                                    </Col>
-                                    </Row>
-                                </FormGroup>
-                                </Col>
-                            </Row>
-            
-            
-                            <div className="d-flex flex-row justify-content-start">
-                                <p className={this.state.showErrorMessage ? 'error-message' : 'hide-error-message'}>{this.state.errorMessage}</p>
-                            </div>
-            
-                            <div className="d-flex flex-row justify-content-start">
-                                <a href="#">Forget Password?</a>
-                            </div>
-                            <Row>
-                                <div className="d-flex flex-row justify-content-start w-100 align-items-center pr-5 p-l-5">
-                                <Button
-                                    className="btn-round btn-lg ml-3"
-                                    color="primary"
-                                    type="submit"
-                                >
-                                    Sign In
-                                    </Button>
-                                <a href="#" className="ml-3">Create an account</a>
-                                </div>
-                            </Row>
-                            </Form>
-                        </CardBody>
-                        </Card>
-                    </div>
-                </div>
-                </div> */}
             </div>
 
         );

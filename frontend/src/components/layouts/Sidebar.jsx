@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Navigate, useNavigate } from "react-router-dom";
 import "../../assets/css/sidebar.css"
@@ -10,18 +10,23 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ContactsIcon from '@mui/icons-material/Contacts';
 import MenuRoundedIcon from '@mui/icons-material/Menu';
 
-const Side_bar = () => {
+const Side_bar = (props) => {
     let navigate = useNavigate();
-
+    const [collapsed, setCollapsed] = useState(true);
     const  navigateClick = () => {
         navigate("/");
     }
+
+    const collapseBar = () => {
+      setCollapsed(!collapsed);
+    }
+
     return (
       <div style={{ display: "flex", height: "100vh" }}>
-        <Sidebar className="sidebar">
+        <Sidebar collapsed={collapsed} className="sidebar">
           <Menu className="sidebar">
-            <MenuItem icon={<MenuRoundedIcon />} className="menuElement">
-              <h2 >ePortfolio</h2>
+            <MenuItem icon={<MenuRoundedIcon onClick={collapseBar}/>} className="menuElement">
+              <h2>ePortfolio</h2>
             </MenuItem>
             <MenuItem onClick={navigateClick} icon={<HomeIcon />} className="menuElement"> Home </MenuItem>
             <SubMenu icon={<AccountBoxIcon />} label="Profile" className="menuElement">
