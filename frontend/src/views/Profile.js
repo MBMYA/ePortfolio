@@ -27,8 +27,8 @@ function Profile(props) {
                     <div className="top-bar">
                         <nav-bar className="nav-link">
                             <ul className="nav_links">
-                                <li><a href="#">Main Page</a></li>
-                                <li><a href="#">Description</a></li>
+                                <li><a href="#">ePortfolio</a></li>
+                                <li><a href="#">My Profile</a></li>
                                 <li><a href="#">Manual</a></li>
                                 <li><a href="#">Contact us</a></li>
                             </ul>
@@ -38,8 +38,36 @@ function Profile(props) {
                         </div>
                         <a className="cta"><button>Sign Out</button></a>
                     </div>
-                    <div>
-                        <h1>Test</h1>
+                    <div className="main-component">
+                        <div className="left-feed">
+                            <div className="side-content">
+                                <div className="profile-header">
+                                    <img src="" alt="" className="profile-picture" />
+                                </div>
+                                <section className="profile-info">
+                                    <h3>Mustafa Alaraj</h3>
+                                    <p className="title">Fresh graduate</p>
+                                </section>
+                                <hr className="divider" />
+                                <section className="profile-info">
+                                    <h3>Mustafa Alaraj</h3>
+                                    <p className="title">Fresh graduate</p>
+                                </section>
+                                <hr className="divider" />
+                                <section className="profile-info">
+                                    <h3>Mustafa Alaraj</h3>
+                                    <p className="title">Fresh graduate</p>
+                                </section>                            
+                            </div>
+                            <div className="side-content"></div>
+                        </div>
+                        <div className="main-feed">
+                            <div className="side-content"></div>
+                            <div className="side-content"></div>
+                        </div>
+                        <div className="right-feed">
+                            <div className="side-content"></div>
+                        </div>
                     </div>
                 </div>
             </div>
