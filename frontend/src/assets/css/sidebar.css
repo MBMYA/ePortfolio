@@ -1,7 +1,7 @@
 .app {
     background: #8ac6d8;
     border: 0px;
-
+    border-top-right-radius: 30px;
 }
 
 .sidebar {
@@ -11,8 +11,8 @@
 }
 
 .menuElement {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-top: 25px;
     color: #165a72;
 }
 

@@ -7,7 +7,7 @@ function Searchbar() {
         <div className="box">
     <input type="checkbox" id="check"/>
     <div className="search-box">
-      <input type="text" placeholder="Type here..."/>
+      <input type="text" placeholder="Find profile..."/>
       <label htmlFor="check" className="icon">
         <i className="fas fa-search"></i>
       </label>

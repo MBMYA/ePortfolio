@@ -10,8 +10,8 @@
     height: 6vh;
     top: 0%;
     left: 0%;
-    background-color: #dbdbdb;
-    padding: 5vh 60px;
+    background-color: #ffffff;
+    padding: 2vh 40px;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -25,6 +25,7 @@
     background-color: #ffffff;
     display: flex;
     border: 0px;
+    z-index: 1000;
   }
 
 .nav-link {
@@ -52,8 +53,8 @@
 }
 
 a button {
-    padding: 9px 25px;
-    width: 9vw;
+    padding: 7px 14px;
+    width: 7vw;
     background-color: rgba(0, 136, 169, 1);
     border: none;
     border-radius: 50px;
@@ -61,7 +62,7 @@ a button {
     transition: all 0.3s ease 0s;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     color: #edf0f1;
     text-decoration: none;
   }
@@ -90,4 +91,75 @@ button{
     width: 300px;
     /* padding: 9px 25px; */
     height: 30px;
+}
+
+.main-component {
+    margin: 2vh 3vw;
+    display: flex;
+    height: 100vh;
+}
+
+.main-component .left-feed, 
+.main-component .right-feed {
+    flex: 1;
+    background-color: #dbdbdb;
+    padding: 1%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-content {
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    z-index: 10;
+    height: fit-content;  /* to be changed to fit-content only */
+    width: 100%;
+    padding: 2%;
+    border: #080808;
+    border-radius: 3%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.side-content .profile-header {
+    background-color: #ffffff;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+
+}
+
+.profile-header .profile-picture {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    background-color: #dadada;
+    border-color: #080808;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.divider {
+    border: 0;
+    border-top: 1px solid #cac4d0;
+    margin: 0;
+    width: 100%;
+  }
+
+.profile-info {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 5px 0 19px;
+    width: 100%;
+}
+
+.main-component .main-feed {
+    flex: 2.5;
+    background-color: #dbdbdb;
+    padding: 2%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
