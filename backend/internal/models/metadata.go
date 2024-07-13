@@ -7,6 +7,7 @@ type description struct {
 }
 type Metadata struct {
 	Username          string        `json:"username"`
+	Fullname          string        `json:"fullname"`
 	Picture           string        `json:"picture"`
 	Projects          []description `json:"projects"`
 	Biography         string        `json:"biography"`
