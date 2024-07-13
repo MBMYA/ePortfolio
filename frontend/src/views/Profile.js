@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Searchbar from "../components/layouts/Searchbar.jsx";
 import Side_bar from "../components/layouts/Sidebar.jsx";
 import {
@@ -16,8 +16,41 @@ import {
 import "../assets/css/profile.css";
 
 import { withRouter } from "../services/with-router.js";
+import { getData } from "../services/metadata.js";
 
 function Profile(props) {
+    const [username, setUsername] = useState("");
+    const [picture, setPicture] =  useState("");
+    const [fullname, setFullname] = useState("");
+    const [projects, setProjects] =  useState("");
+    const [biography, setBiography] = useState("");
+    const [projectsSummary, setProjectsSummary] =  useState("");
+    const [educations, setEducations] = useState("");
+    const [educationsSummary, setEducationsSummary] =  useState("");
+
+
+    useEffect(() => {
+        // Function to fetch profile data
+        const handleDataRetrieval = async (e) => {
+            const metadata = await getData(localStorage.getItem("username"))
+            setUsername(metadata["username"]);
+            setBiography(metadata["biography"]);
+            setEducations(metadata["educations"]);
+            setEducationsSummary(metadata["educationsSummary"]);
+            setFullname(metadata["fullname"]);
+            setPicture(metadata["picture"]);
+            setProjects(metadata["projects"]);
+            setProjectsSummary(metadata["projectsSummary"]);
+        }
+    
+        // Call the function
+        handleDataRetrieval();
+        console.log(username);
+      }, []); // Empty dependency array to run only once on mount
+    
+
+
+    
     return (
             <div style={{ display: "flex", flexDirection: "row", height: "100vh", width: "100vw", backgroundColor: "#dbdbdb"}}>
                 <div className="side-bar">
@@ -45,7 +78,7 @@ function Profile(props) {
                                     <img src="" alt="" className="profile-picture" />
                                 </div>
                                 <section className="profile-info">
-                                    <h3>Mustafa Alaraj</h3>
+                                    <h3>{username}</h3>
                                     <p className="title">Fresh graduate</p>
                                 </section>
                                 <hr className="divider" />
