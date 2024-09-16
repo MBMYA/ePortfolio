@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-	cfg, err := config.LoadConfig(".env")
+	cfg, err := config.LoadConfig("/app/.env")
 	if err != nil {
 		log.Fatal("could not load config:", err)
 	}
@@ -38,7 +38,7 @@ func main() {
 
 	srv := server.ServerRouting(cfg, client)
 	log.Println("Starting server on", cfg.Port)
-	if err := http.ListenAndServe("localhost:"+cfg.Port, srv); err != nil {
+	if err := http.ListenAndServe(":"+cfg.Port, srv); err != nil {
 		log.Fatal(err.Error())
 	}
 }
