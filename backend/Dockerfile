@@ -7,6 +7,8 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 
+COPY .env /.env
+
 COPY . .
 
 WORKDIR /app/cmd/backend
