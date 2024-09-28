@@ -1,21 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 
-
-
-.top-bar {
-    font-family: Arial, sans-serif;
-    position: relative;
-    width: auto;
-    height: 6vh;
-    top: 0%;
-    left: 0%;
-    background-color: #ffffff;
-    padding: 2vh 40px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    border: 0px;
+body{
+    background-color: #f0f0f0;
 }
 
 .side-bar {
@@ -45,6 +32,8 @@
 
 .nav_links li a{
     transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: black;
 }
 
 .nav_links li a:hover{
@@ -53,11 +42,11 @@
 }
 
 a button {
-    padding: 7px 14px;
-    width: 7vw;
+    padding: 2px 14px;
+    width: 120px;
     background-color: rgba(0, 136, 169, 1);
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     font-family: "Montserrat", sans-serif;
@@ -87,11 +76,6 @@ button{
     text-decoration: none;
 }
 
-.searchBar {
-    width: 300px;
-    /* padding: 9px 25px; */
-    height: 30px;
-}
 
 .main-component {
     margin: 2vh 3vw;
@@ -109,20 +93,8 @@ button{
     flex-direction: column;
 }
 
-.side-content {
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    z-index: 10;
-    height: fit-content;  /* to be changed to fit-content only */
-    width: 100%;
-    padding: 2%;
-    border: #080808;
-    border-radius: 3%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-}
 
-
-.side-content .profile-header {
+.profile-header {
     background-color: #ffffff;
     padding: 10px;
     justify-content: center;
