@@ -64,7 +64,7 @@ function Profile(props) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-3">
+                <div className="col-lg-3">
                 <div className="side-content rounded-4">
                                 <div className="profile-header rounded-4">
                                     <img src="" alt="" className="profile-picture" />
