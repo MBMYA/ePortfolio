@@ -46,25 +46,48 @@ function Profile(props) {
       }, []); // Empty dependency array to run only once on mount
     
       return (
-        <div className="container">
-            <div className="row mt-3 justify-content-center">
+        <body className="container">
+            <div className="row mt-3 mb-4 justify-content-center">
                 
                 <div className="col-auto">
                     <nav-bar className="nav-link">
                         <ul className="nav_links">
-                            <li><a href="#">ePortfolio</a></li>
-                            <li><a href="#">My Profile</a></li>
-                            <li><a href="#">Manual</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li className="text-gradient"><a  href="#">ePortfolio</a></li>
+                            <li className="text-gradient"><a href="#">My Profile</a></li>
+                            <li className="text-gradient"><a href="#">Manual</a></li>
+                            <li className="text-gradient"><a href="#">Contact us</a></li>
                         </ul>
                     </nav-bar>
                 </div>
                 <div className="col-2">
-                    <a className="cta"><button>Sign Out</button></a>
+                    <a className="cta "><button>Sign Out</button></a>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-3">
+                <div className="side-content rounded-4">
+                                <div className="profile-header rounded-4">
+                                    <img src="" alt="" className="profile-picture" />
+                                </div>
+                                <section className="profile-info">
+                                    <h3>{username}</h3>
+                                    <p className="title">Fresh graduate</p>
+                                </section>
+                                <hr className="divider" />
+                                <section className="profile-info">
+                                    <h3>Mustafa Alaraj</h3>
+                                    <p className="title">Fresh graduate</p>
+                                </section>
+                                <hr className="divider" />
+                                <section className="profile-info">
+                                    <h3>Mustafa Alaraj</h3>
+                                    <p className="title">Fresh graduate</p>
+                                </section>                            
+                            </div>
                 </div>
             </div>
             
-        </div>
+        </body>
         
       );
 
@@ -91,25 +114,25 @@ function Profile(props) {
                     // </div>
     //                 <div className="main-component">
     //                     <div className="left-feed">
-    //                         <div className="side-content">
-    //                             <div className="profile-header">
-    //                                 <img src="" alt="" className="profile-picture" />
-    //                             </div>
-    //                             <section className="profile-info">
-    //                                 <h3>{username}</h3>
-    //                                 <p className="title">Fresh graduate</p>
-    //                             </section>
-    //                             <hr className="divider" />
-    //                             <section className="profile-info">
-    //                                 <h3>Mustafa Alaraj</h3>
-    //                                 <p className="title">Fresh graduate</p>
-    //                             </section>
-    //                             <hr className="divider" />
-    //                             <section className="profile-info">
-    //                                 <h3>Mustafa Alaraj</h3>
-    //                                 <p className="title">Fresh graduate</p>
-    //                             </section>                            
-    //                         </div>
+                            // <div className="side-content">
+                            //     <div className="profile-header">
+                            //         <img src="" alt="" className="profile-picture" />
+                            //     </div>
+                            //     <section className="profile-info">
+                            //         <h3>{username}</h3>
+                            //         <p className="title">Fresh graduate</p>
+                            //     </section>
+                            //     <hr className="divider" />
+                            //     <section className="profile-info">
+                            //         <h3>Mustafa Alaraj</h3>
+                            //         <p className="title">Fresh graduate</p>
+                            //     </section>
+                            //     <hr className="divider" />
+                            //     <section className="profile-info">
+                            //         <h3>Mustafa Alaraj</h3>
+                            //         <p className="title">Fresh graduate</p>
+                            //     </section>                            
+                            // </div>
     //                         <div className="side-content"></div>
     //                     </div>
     //                     <div className="main-feed">
