@@ -74,7 +74,7 @@ function Login(props) {
     }
 
     const handleToggle = (e) => {
-        const container = document.getElementById('container');
+        const container = document.getElementById('container-login');
         const id = e.currentTarget.id;
         if (id == "register")
             container.classList.add("active");
@@ -83,18 +83,18 @@ function Login(props) {
     }
 
         return (
-            <div className="background">
-                <div className="container" id="container">
+            <div className="body-login">
+                <div className="container-login" id="container-login">
                     <div className="form-container sign-up">
                         <form id="form-signup" onSubmit={handleSubmit}>
-                            <h1>Create Account</h1>
+                            <h1 className="text-gradient fw-bolder">Create Account</h1>
                             <div className="social-icons">
-                                <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-                                <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-                                <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-google-plus-g"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-github"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-linkedin-in"></i></a>
                             </div>
-                            <span>use email for registration</span>
+                            <span className="text-gradient fw-bolder">Use email for registration</span>
                             <input value={username}
                                     onChange={handleUsernameChange}
                                     placeholder="username"
@@ -107,29 +107,29 @@ function Login(props) {
                                     onChange={handlePasswordChange}
                                     placeholder="password"
                                     type={hidden ? 'password' : 'text'}/>
-                            <Button type="submit">Signup</Button>
+                            <Button className="fw-bolder" type="submit">Signup</Button>
                         </form>
                     </div>
 
                     <div className="form-container sign-in">
                         <form id="form-signin" onSubmit={handleSubmit}>
-                            <h1>Signin</h1>
+                            <h1 className="text-gradient fw-bolder">Signin</h1>
                             <div className="social-icons">
-                                <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-                                <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
-                                <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-google-plus-g"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-github"></i></a>
+                                <a href="#" className="icon text-gradient"><i className="fa-brands fa-linkedin-in"></i></a>
                             </div>
-                            <span>use your email and password</span>
+                            <span className="text-gradient fw-bolder">Use your email and password</span>
                             <input value={email}
                                     onChange={handleEmailChange}
-                                    placeholder="email"
+                                    placeholder="Email"
                                     type='text'/>
                             <input value={password}
                                     onChange={handlePasswordChange}
-                                    placeholder="password"
+                                    placeholder="Password"
                                     type={hidden ? 'password' : 'text'}/>
-                            <Button type="submit">Signin</Button>
+                            <Button className="fw-bolder" type="submit">Signin</Button>
                         </form>
                     </div>
                     <div className="toggle-container">
