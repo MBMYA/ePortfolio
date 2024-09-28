@@ -4,6 +4,7 @@ import { createBrowserHistory } from "history";
 import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
 import { getToken, logout } from './services/authentication.js';
 import App from "./App.js"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Login from "./views/Login.js";
 import Profile from "./views/Profile.js"
