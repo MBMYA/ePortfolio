@@ -2,18 +2,8 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
 
 body{
-    background-color: #f0f0f0;
+    background-color: #e9ecef !important;
 }
-
-.side-bar {
-    font-family: Arial, sans-serif;
-    position: relative;
-    height: 100vh;
-    background-color: #ffffff;
-    display: flex;
-    border: 0px;
-    z-index: 1000;
-  }
 
 .nav-link {
     display: flex;
@@ -124,13 +114,4 @@ button{
     flex-direction: column;
     padding: 5px 0 19px;
     width: 100%;
-}
-
-.main-component .main-feed {
-    flex: 2.5;
-    background-color: #dbdbdb;
-    padding: 2%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
 }
