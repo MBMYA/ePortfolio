@@ -14,6 +14,7 @@ import {
 import "../assets/css/profile.css";
 import { withRouter } from "../services/with-router.js";
 import { getData } from "../services/metadata.js";
+import ExperienceCard from "../components/ExperienceCard.jsx";
 
 function Profile(props) {
     const [username, setUsername] = useState("");
@@ -64,7 +65,7 @@ function Profile(props) {
                 </div>
             </div>
             <div className="row">
-                <div className="col-lg-3">
+                <div className="col-lg-3 mt-4">
                 <div className="side-content rounded-4">
                                 <div className="profile-header rounded-4">
                                     <img src="" alt="" className="profile-picture" />
@@ -84,6 +85,33 @@ function Profile(props) {
                                     <p className="title">Fresh graduate</p>
                                 </section>                            
                             </div>
+                </div>
+                <div className="col-lg-8 mt-4">
+                    <h2 className="text-gradient fw-bolder text-center">Experience</h2>
+                    <ExperienceCard
+                        startMonth={"May"}
+                        startYear={"2024"}
+                        endMonth={"Sep"}
+                        endYear={"2024"}
+                        title={"Cloud Solution Intern"}
+                        name={"Huawei Enterprise"}
+                        city={"Dubai"}
+                        country={"UAE"}
+                        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                        />
+                    <h2 className="text-gradient fw-bolder text-center">Education</h2>
+                    <ExperienceCard
+                        startMonth={"Sep"}
+                        startYear={"2020"}
+                        endMonth={"May"}
+                        endYear={"2024"}
+                        title={"BSc. Computer Engineering"}
+                        name={"University of Sharjah"}
+                        city={"Sharjah"}
+                        country={"UAE"}
+                        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                        />
+                    <h2 className="text-gradient fw-bolder text-center">Skills</h2>
                 </div>
             </div>
             
