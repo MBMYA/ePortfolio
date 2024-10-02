@@ -25,12 +25,13 @@ function Profile(props) {
     const [projectsSummary, setProjectsSummary] =  useState("");
     const [educations, setEducations] = useState("");
     const [educationsSummary, setEducationsSummary] =  useState("");
-
+    const parameter = window.location.pathname.split("/").pop();
 
     useEffect(() => {
         // Function to fetch profile data
         const handleDataRetrieval = async (e) => {
-            const metadata = await getData(localStorage.getItem("username"))
+            // const metadata = await getData(localStorage.getItem("username"))
+            const metadata = await getData(parameter)
             setUsername(metadata["username"]);
             setBiography(metadata["biography"]);
             setEducations(metadata["educations"]);
@@ -43,7 +44,6 @@ function Profile(props) {
     
         // Call the function
         handleDataRetrieval();
-        console.log(username);
       }, []); // Empty dependency array to run only once on mount
     
       return (
@@ -89,15 +89,15 @@ function Profile(props) {
                 <div className="col-lg-8 mt-4">
                     <h2 className="text-gradient fw-bolder text-center">Experience</h2>
                     <ExperienceCard
-                        startMonth={"May"}
-                        startYear={"2024"}
-                        endMonth={"Sep"}
-                        endYear={"2024"}
-                        title={"Cloud Solution Intern"}
-                        name={"Huawei Enterprise"}
-                        city={"Dubai"}
-                        country={"UAE"}
-                        description={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+                        startMonth={projects[0]["startMonth"]}
+                        startYear={projects[0]["startYear"]}
+                        endMonth={projects[0]["endMonth"]}
+                        endYear={projects[0]["endYear"]}
+                        title={projects[0]["title"]}
+                        name={projects[0]["name"]}
+                        city={projects[0]["city"]}
+                        country={projects[0]["country"]}
+                        description={projects[0]["description"]}
                         />
                     <h2 className="text-gradient fw-bolder text-center">Education</h2>
                     <ExperienceCard
