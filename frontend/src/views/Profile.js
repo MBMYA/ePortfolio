@@ -20,7 +20,7 @@ function Profile(props) {
     const [username, setUsername] = useState("");
     const [picture, setPicture] =  useState("");
     const [fullname, setFullname] = useState("");
-    const [projects, setProjects] =  useState("");
+    const [projects, setProjects] =  useState([]);
     const [biography, setBiography] = useState("");
     const [projectsSummary, setProjectsSummary] =  useState("");
     const [educations, setEducations] = useState("");
@@ -44,6 +44,7 @@ function Profile(props) {
     
         // Call the function
         handleDataRetrieval();
+        console.log(projects);
       }, []); // Empty dependency array to run only once on mount
     
       return (
@@ -88,17 +89,20 @@ function Profile(props) {
                 </div>
                 <div className="col-lg-8 mt-4">
                     <h2 className="text-gradient fw-bolder text-center">Experience</h2>
-                    <ExperienceCard
-                        startMonth={projects[0]["startMonth"]}
-                        startYear={projects[0]["startYear"]}
-                        endMonth={projects[0]["endMonth"]}
-                        endYear={projects[0]["endYear"]}
-                        title={projects[0]["title"]}
-                        name={projects[0]["name"]}
-                        city={projects[0]["city"]}
-                        country={projects[0]["country"]}
-                        description={projects[0]["description"]}
-                        />
+                    {projects? (
+                        projects.map((project, index) => (
+                        <ExperienceCard
+                            startMonth={project.startMonth}
+                            startYear={project.startYear}
+                            endMonth={project.endMonth}
+                            endYear={project.endYear}
+                            title={project.title}
+                            name={project.name}
+                            city={project.city}
+                            country={project.country}
+                            description={project.description}
+                            />
+                    ))): null}
                     <h2 className="text-gradient fw-bolder text-center">Education</h2>
                     <ExperienceCard
                         startMonth={"Sep"}
