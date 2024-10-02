@@ -47,7 +47,7 @@ func CreateData(client *mongo.Client) http.HandlerFunc {
 		}
 
 		if req.Username == "" {
-			http.Error(w, "Username is no given", http.StatusBadRequest)
+			http.Error(w, "Username is not given", http.StatusBadRequest)
 			return
 		}
 
