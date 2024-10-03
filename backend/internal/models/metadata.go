@@ -12,12 +12,11 @@ type experienceCard struct {
 	Description string `json:"description"`
 }
 type Metadata struct {
-	Username          string           `json:"username"`
-	Fullname          string           `json:"fullname"`
-	Picture           string           `json:"picture"`
-	Projects          []experienceCard `json:"projects"`
-	Biography         string           `json:"biography"`
-	ProjectsSummary   []string         `json:"projectsSummary"`
-	Educations        []experienceCard `json:"educations"`
-	EducationsSummary []string         `json:"educationsSummary"`
+	Username    string           `json:"username"`
+	Fullname    string           `json:"fullname"`
+	Picture     string           `json:"picture"`
+	Experiences []experienceCard `json:"experiences"`
+	Projects    []experienceCard `json:"projects"`
+	Biography   string           `json:"biography"`
+	Educations  []experienceCard `json:"educations"`
 }
