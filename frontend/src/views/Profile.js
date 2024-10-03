@@ -20,11 +20,9 @@ function Profile(props) {
     const [username, setUsername] = useState("");
     const [picture, setPicture] =  useState("");
     const [fullname, setFullname] = useState("");
-    const [projects, setProjects] =  useState([]);
+    const [experiences, setExperiences] =  useState([]);
     const [biography, setBiography] = useState("");
-    const [projectsSummary, setProjectsSummary] =  useState("");
-    const [educations, setEducations] = useState("");
-    const [educationsSummary, setEducationsSummary] =  useState("");
+    const [educations, setEducations] = useState([]);
     const parameter = window.location.pathname.split("/").pop();
 
     useEffect(() => {
@@ -35,16 +33,13 @@ function Profile(props) {
             setUsername(metadata["username"]);
             setBiography(metadata["biography"]);
             setEducations(metadata["educations"]);
-            setEducationsSummary(metadata["educationsSummary"]);
             setFullname(metadata["fullname"]);
             setPicture(metadata["picture"]);
-            setProjects(metadata["projects"]);
-            setProjectsSummary(metadata["projectsSummary"]);
+            setExperiences(metadata["experiences"]);
         }
     
         // Call the function
         handleDataRetrieval();
-        console.log(projects);
       }, []); // Empty dependency array to run only once on mount
     
       return (
@@ -73,7 +68,7 @@ function Profile(props) {
                                 </div>
                                 <section className="profile-info">
                                     <h3>{username}</h3>
-                                    <p className="title">Fresh graduate</p>
+                                    <p className="title">{biography}</p>
                                 </section>
                                 <hr className="divider" />
                                 <section className="profile-info">
@@ -89,21 +84,35 @@ function Profile(props) {
                 </div>
                 <div className="col-lg-8 mt-4">
                     <h2 className="text-gradient fw-bolder text-center">Experience</h2>
-                    {projects? (
-                        projects.map((project, index) => (
-                        <ExperienceCard
-                            startMonth={project.startMonth}
-                            startYear={project.startYear}
-                            endMonth={project.endMonth}
-                            endYear={project.endYear}
-                            title={project.title}
-                            name={project.name}
-                            city={project.city}
-                            country={project.country}
-                            description={project.description}
+                    {experiences? (
+                        experiences.map((experience, index) => (
+                        <ExperienceCard key={index}
+                            startMonth={experience.startMonth}
+                            startYear={experience.startYear}
+                            endMonth={experience.endMonth}
+                            endYear={experience.endYear}
+                            title={experience.title}
+                            name={experience.name}
+                            city={experience.city}
+                            country={experience.country}
+                            description={experience.description}
                             />
                     ))): null}
                     <h2 className="text-gradient fw-bolder text-center">Education</h2>
+                    {educations? (
+                        educations.map((education, index) => (
+                        <ExperienceCard key={index}
+                            startMonth={education.startMonth}
+                            startYear={education.startYear}
+                            endMonth={education.endMonth}
+                            endYear={education.endYear}
+                            title={education.title}
+                            name={education.name}
+                            city={education.city}
+                            country={education.country}
+                            description={education.description}
+                            />
+                    ))): null}
                     <ExperienceCard
                         startMonth={"Sep"}
                         startYear={"2020"}
@@ -123,61 +132,6 @@ function Profile(props) {
         
       );
 
-    
-    // return (
-    //         <div style={{ display: "flex", flexDirection: "row", height: "100vh", width: "100vw", backgroundColor: "#dbdbdb"}}>
-    //             <div className="side-bar">
-    //                 <Side_bar />
-    //             </div>
-    //             <div style={{ display: "flex", flexDirection: "column", height: "100vh", flex: "1"}}>
-                    // <div className="top-bar">
-                    //     <nav-bar className="nav-link">
-                    //         <ul className="nav_links">
-                    //             <li><a href="#">ePortfolio</a></li>
-                    //             <li><a href="#">My Profile</a></li>
-                    //             <li><a href="#">Manual</a></li>
-                    //             <li><a href="#">Contact us</a></li>
-                    //         </ul>
-                    //     </nav-bar>
-                    //     <div className="searchBar">
-                    //         <Searchbar />
-                    //     </div>
-                    //     <a className="cta"><button>Sign Out</button></a>
-                    // </div>
-    //                 <div className="main-component">
-    //                     <div className="left-feed">
-                            // <div className="side-content">
-                            //     <div className="profile-header">
-                            //         <img src="" alt="" className="profile-picture" />
-                            //     </div>
-                            //     <section className="profile-info">
-                            //         <h3>{username}</h3>
-                            //         <p className="title">Fresh graduate</p>
-                            //     </section>
-                            //     <hr className="divider" />
-                            //     <section className="profile-info">
-                            //         <h3>Mustafa Alaraj</h3>
-                            //         <p className="title">Fresh graduate</p>
-                            //     </section>
-                            //     <hr className="divider" />
-                            //     <section className="profile-info">
-                            //         <h3>Mustafa Alaraj</h3>
-                            //         <p className="title">Fresh graduate</p>
-                            //     </section>                            
-                            // </div>
-    //                         <div className="side-content"></div>
-    //                     </div>
-    //                     <div className="main-feed">
-    //                         <div className="side-content"></div>
-    //                         <div className="side-content"></div>
-    //                     </div>
-    //                     <div className="right-feed">
-    //                         <div className="side-content"></div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    // );
 }
 
 export default withRouter(Profile);
